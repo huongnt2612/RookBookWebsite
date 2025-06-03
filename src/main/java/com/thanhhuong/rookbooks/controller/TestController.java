@@ -5,4 +5,6 @@ public class TestController {
     private String demo;
 
     private String message;
+
+    private double cicd;
 }
