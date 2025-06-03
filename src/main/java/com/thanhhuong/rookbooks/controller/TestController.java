@@ -9,4 +9,6 @@ public class TestController {
     private double cicd;
 
     private double me2;
+
+    private double me3;
 }
