@@ -7,4 +7,6 @@ public class TestController {
     private String message;
 
     private double cicd;
+
+    private double me2;
 }
