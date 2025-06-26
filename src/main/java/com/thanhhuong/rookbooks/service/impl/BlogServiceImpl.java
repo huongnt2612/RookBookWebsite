@@ -56,7 +56,9 @@ public class BlogServiceImpl implements BlogService {
     public void addBlog(Blog blog, MultipartFile coverImage) throws IOException {
 
         Blog savedBlog = blogRepository.save(blog);
-        savedBlog.setThumbnail(fileUploadService.uploadFile(coverImage));
+        if(coverImage != null && !coverImage.isEmpty()) {
+            savedBlog.setThumbnail(fileUploadService.uploadFile(coverImage));
+        }
         blogRepository.save(blog);
 
     }
@@ -69,12 +71,13 @@ public class BlogServiceImpl implements BlogService {
             existedBlog.setTitle(blog.getTitle());
             existedBlog.setSummary(blog.getSummary());
             existedBlog.setContent(blog.getContent());
-            existedBlog.setThumbnail(fileUploadService.uploadFile(thumbnail));
+            if(thumbnail != null && !thumbnail.isEmpty()) {
+                existedBlog.setThumbnail(fileUploadService.uploadFile(thumbnail));
+            }
             blogRepository.save(existedBlog);
-
         }
     }
-
+    //committtt
 
     @Override
     public void deleteBlog(Long id) {

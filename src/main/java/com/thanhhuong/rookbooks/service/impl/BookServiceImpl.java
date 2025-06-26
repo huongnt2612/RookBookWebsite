@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 
 @RequiredArgsConstructor
@@ -53,6 +54,8 @@ public class BookServiceImpl implements BookService {
     public void addBook(Book book, MultipartFile coverImage) throws IOException {
         Book savedBook = bookRepository.save(book);
         savedBook.setCoverImage(fileUploadService.uploadFile(coverImage));
+        savedBook.setBuyCount(0);
+        savedBook.setTotalRevenue(Double.parseDouble("0"));
         bookRepository.save(book);
     }
 
