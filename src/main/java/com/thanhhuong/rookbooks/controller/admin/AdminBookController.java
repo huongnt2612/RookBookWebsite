@@ -81,6 +81,7 @@ public class AdminBookController extends BaseController {
                     book.setCoverImage(existingBook.getCoverImage());
                 }
 
+                // update book
                 bookService.editBook(book, coverImage);
                 Book editedBook = bookService.getBookById(book.getId());
                 model.addAttribute("book", editedBook);
