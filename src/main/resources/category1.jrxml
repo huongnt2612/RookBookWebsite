@@ -17,7 +17,7 @@
     </background>
     <title>
         <band height="79" splitType="Stretch"/>
-    </title>              
+    </title>
     <pageHeader>
         <band height="35" splitType="Stretch"/>
     </pageHeader>
